@@ -1,11 +1,8 @@
 def prime?(num)
-  test = num - 1 
-  array = (1..test).to_a
-  array.each do |val|
-    if num % val == 0 
-      false 
-    else
-      true 
-    end
-  end
+  if num < 0 or num == 0 or num == 1 
+    false
+  else
+    (2..(num - 1)).to_a.all? {|val| num % val != 0}
+  end 
+end
   
